@@ -1,0 +1,32 @@
+.w3-container{
+	display: flex;
+}
+.w3-input{
+	margin: 5px;
+	width: 400px;
+}
+#plus{
+	margin-top: 25px;
+}
+.minus{
+	border-radius: 20%;
+}
+.edit{ 
+	border-radius: 20%;
+}
+.showul{
+list-style: none;
+}
+.LoadText{
+display: none;
+ margin-left: 640px;
+}
+.ModalEditContent{
+	display: flex;
+	flex-wrap: wrap;
+}
+.ModalBtns{
+	width: 100%;
+	margin: 5px;
+	text-align: right;
+}
