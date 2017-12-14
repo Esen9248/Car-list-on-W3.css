@@ -2,22 +2,21 @@
 <html>
 <head>
   <meta charset="utf-8">
-   <title>Car list</title>
+   <title>Список машин</title>
    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="style.css">
 </head>
    <body>
+    <h3 class="add">Добавить машину:</h3>
     <!-- Inputs -->
    	<div class="w3-container">
-   			<div class="inps">
-<input type="text" class="marks w3-input w3-border" placeholder="Марка">
-<input type="text" class = "model w3-input w3-border" placeholder="Модель"></div>
+<div><input type="text" class="marks w3-input w3-border" placeholder="Марка"></div>
+<div><input type="text" class = "model w3-input w3-border" placeholder="Модель"></div>
+<div><input type="text" class="year w3-input w3-border" placeholder="Год"></div>
+<div><input type="text" class="color w3-input w3-border" placeholder="Цвет"></div>
 <div>
-<input type="text" class="year w3-input w3-border" placeholder="Год">
-<input type="text" class="color w3-input w3-border" placeholder="Цвет"></div>
-<div>
-<label class="inps">  Коробка Передач<select class="sel w3-input w3-border">
+<label class="LabelForSelect">Коробка Передач<select class="sel w3-input w3-border">
 	<option value="Автомат">Автомат</option>
 	<option value="Механика">Механика</option>
 	<option value="Робот">Робот</option>
@@ -27,8 +26,9 @@
 </div>
 <span><button id="plus" class="w3-button w3-circle w3-green w3-hover-teal">+</button></span>
 </div>
-<p class="LoadText">Loading...</p>
+<p class="LoadText">Загрузка...</p>
 <!-- Table -->
+<h2 class="title">Mой Список Машин</h2>
 <table class="w3-table w3-striped w3-bordered w3-hoverable">
 	<thead class="w3-green">
 		<th> Марка </th>
@@ -40,10 +40,9 @@
 		<th>Изменить</th>
 		<th>Смотреть</th>
 	</thead>
-	<tbody class="tb">
+	<tbody>
 	</tbody>
 </table>
-</div>
 <!-- Modal Edit -->
 <div class="w3-modal" id="myModal">
   <div class="w3-modal-content w3-animate-zoom">
@@ -55,7 +54,7 @@
        <input type="text" class="modeledited w3-input w3-border" placeholder="Модель">
        <input type="text" class="yearedited w3-input w3-border" placeholder="Год">
        <input type="text" class="coloredited w3-input w3-border" placeholder="Цвет">
-       <label>Коробка Передач<select class="seledited w3-input w3-border">
+       <label class="LabelForSelect">Коробка Передач<select class="seledited w3-input w3-border">
   <option value="Автомат">Автомат</option>
   <option value="Механика">Механика</option>
   <option value="Робот">Робот</option>

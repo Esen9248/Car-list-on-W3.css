@@ -20,7 +20,7 @@ $(document).ready(function(){
 		dataType: 'json',
 	}).done(function(data){
 		$.each(data.hits.hits, function(){
-			$('.tb').append('<tr>' + 
+			$('tbody').append('<tr>' + 
 		'<td>' + this._source.mark + '</td>' 
 		+ '<td>' + this._source.model + '</td>' + 
 		'<td>' + this._source.year + '</td>' + 
@@ -31,7 +31,7 @@ $(document).ready(function(){
 	 	'<td><button type="button" class="w3-btn w3-teal show" onclick="OpenModalShow()">Смотреть</button></td>' + '</tr>');
 		})
 	}).fail(function( jqXHR, textStatus, error){
-  	alert('Error: ' + jqXHR);
+  	alert('Error');
   })
 });
 // Add Info To Server
@@ -54,7 +54,7 @@ $('#plus').click(function(){
 }),
 }).done(function(data){
   	$('.LoadText').css('display','none');
-  	$('.tb').append('<tr>' + 
+  	$('tbody').append('<tr>' + 
 		'<td>' + $('.marks').val() + '</td>' 
 		+ '<td>' + $('.model').val() + '</td>' + 
 		'<td>' + $('.year').val() + '</td>' + 
@@ -64,11 +64,11 @@ $('#plus').click(function(){
 	 	'<td><button type="button" class="edit w3-btn w3-blue fa fa-pencil" onclick="OpenModalEdit()"></button></td>' + 
 	 	'<td><button type="button" class="w3-btn w3-teal show" onclick="OpenModalShow()">Смотреть</button></td>' + '</tr>');
   }).fail(function( jqXHR, textStatus){
-  	alert('Error: ' + jqXHR);
+  	alert('Error');
   })
 })
 // Delete Info From Server
-$('.tb').on('click', '.minus', (function(){
+$('tbody').on('click', '.minus', (function(){
 	$('.LoadText').css('display','block');
 	$.ajax({
 		url: `https://scalr.api.appbase.io/Cars/machines/${$(this).attr('data-id')}`,
@@ -81,7 +81,7 @@ $('.tb').on('click', '.minus', (function(){
 	}).done(function(response){
 		location.reload();
 	}).fail(function( jqXHR, textStatus, error){
-		alert(error)
+		alert('Error')
 	})
 })
 )
@@ -92,7 +92,7 @@ OpenModalEdit = function(){
 CloseModalEdit = function(){
 	$('#myModal').css('display', 'none');
 }
-$('.tb').on('click', '.edit', function(){
+$('tbody').on('click', '.edit', function(){
 	marked = $(this).parent().parent().find('td').first();
 	modeled = $(marked).next();
 	yeared = $(modeled).next();
@@ -120,7 +120,7 @@ CloseModalShow = function(){
 	$('#myModal2').css('display', 'none');
 	$('.ShowUl').html('');
 }
-$('.tb').on('click', '.show', function(){
+$('tbody').on('click', '.show', function(){
 		$('#myModal2').css('display', 'block');
 	var VariableShowMark =  $(this).parent().parent().find('td').first();
 	var VariableShowModel = $(VariableShowMark).next();
