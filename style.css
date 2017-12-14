@@ -1,3 +1,6 @@
+body{
+	background: url('concrete-texture.png') center center repeat;
+}
 .title{
 	text-align: center;
 }
